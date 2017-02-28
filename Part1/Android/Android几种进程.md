@@ -12,3 +12,6 @@
 1. 调用startForegound，让你的Service所在的线程成为前台进程
 2. Service的onStartCommond返回START_STICKY或START_REDELIVER_INTENT
 3. Service的onDestroy里面重新启动自己
+4.root之后提升为系统级App
+5.在清单文件中，intent-filter节点中添加android:priotity属性，让其等于1000，这是最高的优先级，不容易被杀死
+6.可以通过把 Service 放在单独进程执行，这样占用的内存更少，系统不会盯上它（在系统内存吃紧的情况下会去会砍掉内存占用较多的进程）
